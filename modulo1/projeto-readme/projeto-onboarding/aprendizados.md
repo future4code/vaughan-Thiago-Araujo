@@ -1,0 +1,2 @@
+# Aprendizados da semana
+Nessa semana aprendi um sobre **Slack** que é um programa muito bom porém nunca tinha visto, também aprendi a mexer com o **Zoom** até tinha visto antes mas nunca mexi, aprendi a utilizar o **Terminal** que achei muito interessante e comecei a utilizar os comandos **Git** muito complicado porém tô acompanhando ainda.
