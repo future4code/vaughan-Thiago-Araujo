@@ -1,4 +1,4 @@
-console.log("Olá mundo")
+// console.log("Olá mundo")
 
 // Exercícios de interpretação 1
 
@@ -58,12 +58,13 @@ console.log("Olá mundo")
 
 // Exercícios de escrita 3
 
+
 // let carrinho = []
 // 
 // const frutaUm = {
-//   nome: "Laranja",
-//   frutaUm: true
-//   
+// nome: "Laranja",
+// disponibilidade: true
+// 
 // }
 // 
 // const frutaDois = {
@@ -83,3 +84,65 @@ console.log("Olá mundo")
 // 
 // recebaObjeto(frutaUm,frutaDois,frutaTres);
 // console.log(carrinho);
+
+// function disponibilidadeDoProduto(frutaUm) {
+//  frutaUm.disponibilidade = !true 
+//   
+//  console.log(frutaUm)
+// }
+// disponibilidadeDoProduto(frutaUm)
+
+// Desafio 1
+
+// function usuario() {
+//   const nome = prompt("Digite seu nome");
+//   const idade = prompt("DIgite sua idade");
+//   const profissao = prompt("DIgite sua profissão")
+// 
+// 
+// 
+//   const usuarioUm = {
+//     nome: nome,
+//     idade: idade,
+//     profissao:profissao,
+// 
+//     
+//   
+//   }
+// 
+// console.log(usuarioUm)
+// }
+
+// usuario()
+
+// Desafio 2
+
+// const filmeUm = {
+//   anoLancamento: 2000,
+//   nome: "Rei Leão"
+// 
+// }
+// 
+// const filmeDois = {
+// 
+//   anoLancamento: 2002,
+//   nomeDois: "Homem Aranha"
+//   
+// }
+// 
+// 
+// 
+// function filme(filmeUm,filmeDois) {
+// 
+//   console.log(filmeUm);
+//   console.log(filmeDois);
+// 
+//  console.log("O primero filme foi lançado  antes do segundo?",filmeUm.anoLancamento >= filmeDois.anoLancamento);
+//  console.log("O primeiro filme foi lançado no mesmo ano do segundo?",filmeUm.anoLancamento === filmeDois.anoLancamento)
+// 
+//  
+// }
+// 
+//  filme(filmeUm,filmeDois)
+
+// Desafio 3
