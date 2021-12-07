@@ -97,3 +97,145 @@
 // Desafio 1 ↑
 
 // Desafio 2
+
+console.log("----Dados da compra----")
+
+const nome  = prompt("Nome completo")
+const tipo = prompt("Qual o tipo de jogo")
+const etapa = prompt("Qual etapa do jogo")
+const categoria  = prompt("Qual a categoria do jogo")
+const quantidade = Number(prompt("Quantos ingressos"))
+
+console.log(nome)
+console.log(tipo)
+console.log(etapa)
+console.log(categoria)
+
+
+if (tipo === "DO") {
+
+  if(etapa === "SF") {
+
+    if(categoria === "1"){
+
+      console.log(quantidade * 1320)
+      
+    } else if(categoria === "2") {
+
+      console.log(quantidade * 880) 
+
+      }else if(categoria === "3"){
+
+      console.log(quantidade * 550)
+    
+    } else if(categoria === "4")
+  
+      console.log(quantidade * 220)
+    
+    
+    
+    } else if(etapa === "DT") {
+
+      if(categoria === "1"){
+
+        console.log(quantidade * 660)
+        
+      } else if(categoria === "2") {
+  
+        console.log(quantidade * 440) 
+  
+        }else if(categoria === "3"){
+  
+        console.log(quantidade * 330)
+      
+      } else if(categoria === "4")
+    
+        console.log(quantidade * 170)
+
+    } else if(etapa === "FI") {
+      
+      if(categoria === "1"){
+
+        console.log(quantidade * 1980)
+        
+      } else if(categoria === "2") {
+  
+        console.log(quantidade * 1320) 
+  
+        }else if(categoria === "3"){
+  
+        console.log(quantidade * 880)
+      
+      } else if(categoria === "4")
+    
+        console.log(quantidade * 330)
+
+    }
+
+} else if(tipo === "IN") {
+  
+  if(etapa === "SF") {
+
+    if(categoria === "1"){
+
+      console.log(quantidade * 1320 * 4)
+      
+    } else if(categoria === "2") {
+
+      console.log(quantidade * 880 * 4) 
+
+      }else if(categoria === "3"){
+
+      console.log(quantidade * 550 * 4)
+    
+    } else if(categoria === "4")
+  
+      console.log(quantidade * 220 * 4)
+    
+    
+    
+    } else if(etapa === "DT") {
+
+      if(categoria === "1"){
+
+        console.log(quantidade * 660 * 4)
+        
+      } else if(categoria === "2") {
+  
+        console.log(quantidade * 440 * 4) 
+  
+        }else if(categoria === "3"){
+  
+        console.log(quantidade * 330 * 4)
+      
+      } else if(categoria === "4")
+    
+        console.log(quantidade * 170 * 4)
+
+    } else if(etapa === "FI") {
+      
+      if(categoria === "1"){
+
+        console.log(quantidade * 1980 * 4)
+        
+      } else if(categoria === "2") {
+  
+        console.log(quantidade * 1320 * 4) 
+  
+        }else if(categoria === "3"){
+  
+        console.log(quantidade * 880 * 4)
+      
+      } else if(categoria === "4")
+    
+        console.log(quantidade * 330 * 4)
+
+    }
+}
+
+
+
+// categoria1 SF 1.320,00 DT 660,00 FI 1980,00
+// categoria2 SF 880,00 DT 440,00 FI 1320,00
+// categoria3 SF 550,00 DT 330,00 FI 880.00
+// categoria4 SF 220,00 DT 170,00 FI 330,00
