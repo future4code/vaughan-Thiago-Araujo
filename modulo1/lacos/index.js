@@ -113,3 +113,35 @@
 //     console.log("O menor número é", num)
 //   }
 // }
+
+// Desafio 1
+
+// const numeroEscolhido = Number(prompt("Escolha um número"))
+// console.log("Vamos jogar")
+// 
+// let acertou = false
+// let tentativas = 0
+// let chute
+// 
+//  while(!acertou) {
+//   
+//   chute = Number(prompt("Tente acertar o número"))
+//   tentativas++
+//   console.log(`Tentativa do número foi; ${chute} `)
+//   
+//   if(chute === numeroEscolhido) {
+//     
+//     console.log("Parabéns você acertou")
+//     console.log(`Número da tentativas foi: ${tentativas}`)
+//     acertou = true
+// 
+//   }else if(chute > numeroEscolhido) {
+// 
+//     console.log("O número chutado é maior")
+// 
+//   }else {
+// 
+//     console.log("O número chutado é menor")
+// 
+//   }
+//  }
