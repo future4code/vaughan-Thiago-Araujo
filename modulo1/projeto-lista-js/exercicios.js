@@ -74,10 +74,10 @@
 //  } 
 
 // // EXERCÍCIO 06
- function retornaEmMaiuscula(palavra) {
+ function retornaEmMaiuscula() {
    
-  const mensagem = "Markting Digital".toLocaleUpperCase()
-  return mensagem
+  const mensagem = "Markting Digital".toLocaleUpperCase
+  console.log(mensagem)
  }
  
 
