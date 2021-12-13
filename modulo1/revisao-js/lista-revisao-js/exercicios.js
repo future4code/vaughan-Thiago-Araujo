@@ -26,11 +26,13 @@ console.log(retornaArrayOrdenado([36,12,56,7,3]))
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
 
+  let par = array.filter(par => (par % 2)== 0)
+  return par
 }
 
 console.log(retornaNumerosPares([1,2,3,4,5,6,7,8]))
+console.log(par)
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
