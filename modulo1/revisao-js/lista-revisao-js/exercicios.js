@@ -54,8 +54,11 @@ console.log(maiorNumero)
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
 }
+
+
+retornaObjetoEntreDoisNumeros(15,30)
+
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
