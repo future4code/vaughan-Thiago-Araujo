@@ -1,0 +1,14 @@
+.cabecalho {
+  color:whitesmoke;
+  background-color: #455a64;
+  border: 2px solid #1c313a;
+  text-align: center;
+}
+
+.imagens {
+  max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto; 
+  margin-right: 40px;
+}
