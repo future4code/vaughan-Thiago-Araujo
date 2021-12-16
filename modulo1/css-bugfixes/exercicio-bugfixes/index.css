@@ -63,6 +63,8 @@ div>p:first-child {
 }
 
 
+
+
 /** 
   *
   *  ESTILOS HOME 
@@ -108,7 +110,11 @@ table {
 
 }
 
-td button {
+.container-button:hover {
+    background-color: darkmagenta;
+}
+
+td button {    
     background-color: #fadf63;
     width: 150px;
     height: 30px;
