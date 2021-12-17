@@ -1,0 +1,21 @@
+.cabecalho {
+  color:whitesmoke;
+  background-color: #33691e;
+  border: 2px solid #003d00;
+  text-align: center;
+}
+
+.botao {
+  max-width:200px;
+  max-height:150px;
+  width: auto;
+  height: auto; 
+  margin-right: 40px;
+}
+
+.texto {
+  color:whitesmoke;
+  background-color: #33691e;
+  border: 2px solid #003d00;
+  text-align: center;
+}
