@@ -1,0 +1,59 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #9c4dcc;
+  padding: 0px 20px;
+}
+
+button {
+  padding: 4px;
+  width: 100px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 4fr 4fr;
+  gap: 20px;
+  margin: 20px;
+}
+
+footer {
+display: flex;
+    background-color: #9c4dcc;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/-1;
+}
+
+.textos {
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-shadow: 2px 2px 5px green;
+    row-gap: 10px;
+}
+
+.box{
+  width:200px;
+  height:200px;
+  float:left;
+  background-color:#ccc;
+  margin-bottom: 20px;
+}
+
+.spacing{
+  margin-right:20px;
+}
+
+.container{
+    overflow:hidden;
+    width:860px;
+}
