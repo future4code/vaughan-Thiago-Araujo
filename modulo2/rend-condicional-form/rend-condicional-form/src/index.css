@@ -1,0 +1,10 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h3 {
+  border: solid 2px black;
+  background-color: black;
+  color: #04FF00;
+}
