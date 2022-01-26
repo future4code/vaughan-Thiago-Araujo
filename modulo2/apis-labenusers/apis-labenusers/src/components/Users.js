@@ -10,7 +10,7 @@ const DeleteButton = styled.span`
 
 const axiosConfig = {
   headers: {
-    Authorization: "severo"
+    Authorization: "thiago-henrique-vaughan"
   }
 };
 

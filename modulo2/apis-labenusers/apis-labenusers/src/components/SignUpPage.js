@@ -22,7 +22,7 @@ class SignUpPage extends React.Component {
   handleCreateUser = () => {
     const axiosConfig = {
       headers: {
-        Authorization: "severo"
+        Authorization: "thiago-henrique-vaughan"
       }
     };
 

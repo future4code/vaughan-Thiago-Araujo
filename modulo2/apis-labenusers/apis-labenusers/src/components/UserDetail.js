@@ -4,7 +4,7 @@ import axios from "axios";
 
 const axiosConfig = {
   headers: {
-    Authorization: "severo"
+    Authorization: "thiago-henrique-vaughan"
   }
 };
 
