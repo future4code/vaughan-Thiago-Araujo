@@ -1,5 +1,17 @@
 import React from "react";
 import axios from "axios";
+import styled from "styled-components";
+
+const Border = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  min-width: 60px;
+  justify-content: start;
+  border: 2px solid black;
+  padding: 60px 10px;
+`
 
 class SignUpPage extends React.Component {
   state = {
@@ -49,7 +61,8 @@ class SignUpPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <Border>
+        <h2>Cadastro</h2>
         <input
           placeholder="Nome"
           type="text"
@@ -63,7 +76,7 @@ class SignUpPage extends React.Component {
           onChange={this.handleEmailChange}
         />
         <button onClick={this.handleCreateUser}>Criar Usuário</button>
-      </div>
+      </Border>
     );
   }
 }

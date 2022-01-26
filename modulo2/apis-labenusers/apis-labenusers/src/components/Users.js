@@ -3,8 +3,28 @@ import styled from "styled-components";
 import axios from "axios";
 import UserDetail from "./UserDetail";
 
+const Border = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  min-width: 60px;
+  justify-content: center;
+  border: 2px solid black;
+  padding: 10px 10px;
+`
+
+const UserListItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  min-width: 60px;
+  justify-content: center;
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+`;
+
 const DeleteButton = styled.span`
-  color: red;
+  color: blue;
   cursor: pointer;
 `;
 
@@ -49,7 +69,7 @@ class Users extends React.Component {
           this.fetchUsersList();
         })
         .catch(e => {
-          alert("ERRO AO APAGAR USUARIO");
+          alert("ERRO AO APAGAR USUÁRIO");
         });
     }
   };
@@ -88,12 +108,13 @@ class Users extends React.Component {
     return (
       <div>
         {this.state.currentPage === "usersList" ? (
-          <div>
-            <ul>
+          <Border>
+            <h3>Lista de Usuários</h3>
+            <UserListItem>
               {this.state.usersList.length === 0 && <div>Carregando...</div>}
               {this.state.usersList.map(user => {
                 return (
-                  <li>
+                  <UserListItem>
                     <span onClick={() => this.changePage(user.id)}>
                       {user.name}
                     </span>
@@ -102,10 +123,10 @@ class Users extends React.Component {
                     >
                       X
                     </DeleteButton>
-                  </li>
+                  </UserListItem>
                 );
               })}
-            </ul>
+            </UserListItem>
             <hr />
             <h4>Procurar usuário</h4>
             <input
@@ -115,7 +136,7 @@ class Users extends React.Component {
               onChange={this.handleNameChange}
             />
             <button onClick={this.handleSearchUser}>Salvar edição</button>
-          </div>
+          </Border>
         ) : (
           <UserDetail userId={this.state.userId} changePage={this.changePage} />
         )}
