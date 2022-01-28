@@ -57,7 +57,7 @@ class ListPlaylistDetail extends React.Component {
 
     axios
       .put(
-        `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${
+        `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists${
           this.props.playlistId
         }`,
         body,
@@ -87,7 +87,7 @@ class ListPlaylistDetail extends React.Component {
             value={this.state.playlist}
             onChange={this.handlePlaylistChange}
           />
-          <button onClick={this.handleCreateUser}>Salvar edição</button>
+          <button onClick={this.handleCreatePlaylist}>Salvar edição</button>
         </div>
       );
 

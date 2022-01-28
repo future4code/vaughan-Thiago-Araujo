@@ -23,7 +23,7 @@ class UserDetail extends React.Component {
   getUserDetail = () => {
     axios
       .get(
-        `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists${
+        `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users${
           this.props.userId
         }`,
         axiosConfig

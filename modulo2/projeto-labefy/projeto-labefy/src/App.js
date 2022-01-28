@@ -1,5 +1,6 @@
 import React from "react";
 import CreatePlaylist from "./components/CreatePlaylist";
+import ListPlaylist from "./components/ListPlaylist"
 
 export default class App extends React.Component {
   state = {
@@ -8,7 +9,7 @@ export default class App extends React.Component {
 
   changePage = () => {
     if (this.state.currentPage === "CreatePlaylist") {
-      this.setState({ currentPage: "users" });
+      this.setState({ currentPage: "ListPlaylist" });
     } else {
       this.setState({ currentPage: "CreatePlaylist" });
     }
@@ -18,7 +19,7 @@ export default class App extends React.Component {
     return (
       <div>
         <button onClick={this.changePage}>Trocar de tela</button>
-        {this.state.currentPage === "CreatePlaylist" ? <CreatePlaylist /> : <Users />}
+        {this.state.currentPage === "CreatePlaylist" ? <CreatePlaylist /> : <ListPlaylist />}
       </div>
     );
   }

@@ -2,21 +2,21 @@ import React from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-const Header = styled.header`
+const Header = styled.div`
   display: flex;
   border: 2px solid black;
-  color: #FFFFFF;
-  background-color: #391787 ; 
-`
-
-const Body = styled.body`
-  display: flex;
-  background: #AB91F2;
+  color: #000000;
+  background-color: #CCAAF3; 
+  justify-content: center;
+  width: 20%;
+  margin: 0 auto;
+  padding: 30px;
+  flex-direction: column;
 `
 
 class CreatePlaylist extends React.Component {
   state = {
-    playlist: ""
+    playlist: "",
   };
 
   handlePlaylistChange = (event) => {
@@ -27,17 +27,19 @@ class CreatePlaylist extends React.Component {
 
   handleCreatePlaylist = () => {
     const axiosConfig = {
-      header: {
+      headers: {
         Authorization: "thiago-henrique-vaughan"
       }
     };
+    
 
     const body = {
-      playlist: this.state.playlist
+      name: this.state.playlist
     };
 
-    axios
-    .post(
+    console.log(axiosConfig)
+
+    axios.post(
       "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
       body,
       axiosConfig
@@ -51,13 +53,17 @@ class CreatePlaylist extends React.Component {
     });
   };
 
+  criarPlay = () => {
+    console.log(this.state.playlist)
+  }
+
   render() {
     return (
-      <div>
-      <Header>
-        Flip Flops
-      </Header>
-      <Body>
+    
+    
+       <Header>
+        
+        <h2>Flip Flops</h2>
         <input 
         placeholder="Nome da playlist"
         type="text"
@@ -65,8 +71,8 @@ class CreatePlaylist extends React.Component {
         onChange={this.handlePlaylistChange}
         />
         <button onClick={this.handleCreatePlaylist}>Criar Playlist</button>
-      </Body>
-      </div>
+       
+     </Header>
     );
   }
 }
