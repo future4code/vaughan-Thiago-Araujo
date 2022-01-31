@@ -1,27 +1,44 @@
-import React from "react";
-import CreatePlaylist from "./components/CreatePlaylist";
-import ListPlaylist from "./components/ListPlaylist"
+import React from 'react';
+import styled from "styled-components";
+import Header from './components/Header';
+import PlaylistCreationPage from './components/PlaylistCreationPage';
+import PlaylistManagerPage from './components/PlaylistManagerPage';
 
-export default class App extends React.Component {
+const AppContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+`
+
+
+class App extends React.Component {
   state = {
-    currentPage: "CreatePlaylist"
-  };
+    currentPage: "playlistCreationPage"
+  }
 
-  changePage = () => {
-    if (this.state.currentPage === "CreatePlaylist") {
-      this.setState({ currentPage: "ListPlaylist" });
-    } else {
-      this.setState({ currentPage: "CreatePlaylist" });
+  changePage = (currentPage) => {
+    this.setState({currentPage: currentPage})
+  }
+
+  render () {
+    const renderCurrentPage = () => {
+      if (this.state.currentPage === "playlistCreationPage") {
+        return <PlaylistCreationPage />
+      } else if (this.state.currentPage === "playlistManagerPage") {
+        return <PlaylistManagerPage />
+      }
     }
-  };
 
-  render() {
     return (
-      <div>
-        <button onClick={this.changePage}>Trocar de tela</button>
-        {this.state.currentPage === "CreatePlaylist" ? <CreatePlaylist /> : <ListPlaylist />}
-      </div>
+      <AppContainer>
+        <Header 
+          changePage={this.changePage}
+        />
+        {renderCurrentPage()}
+      </AppContainer>
     );
   }
 }
 
+export default App;
