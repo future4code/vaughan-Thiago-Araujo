@@ -3,15 +3,36 @@ import { InputConteiner, ScreenConteiner, SignUpButtonContainer } from "./styled
 import { TextField } from '@mui/material';
 import useForm from "../../hooks/useForm";
 import Button from "@material-ui/core/Button"
+import { useNavigate } from "react-router-dom"
+import { goToRegister, goToFeed } from "../../routes/coordinator"
+import axios from "axios";
+import { BASE_URL } from "../../constants/urls"
+import useUnprotectedPage from "../../hooks/useUnprotectedPage";
+
 
 const LoginPage = () => {
+
+  useUnprotectedPage()
+
+  const Navigate = useNavigate()
+  
+  const [form, onChange, clear] = useForm({username: "", email: "", password: ""})
   
   const onSubmitForm = (event) => {
-    event.preventDefault()
+    event.preventDefault();
+    login() 
   }
 
-  const [form, onChange, clear] = useForm({username: "", email: "", password: ""})
-
+  const login = (Navigate) => {
+    axios.post(`${BASE_URL}/users/login`, form)
+    .then((res) => {
+      localStorage.setItem("token", res.data.token)
+      clear()
+      goToFeed(Navigate)
+    })
+    .catch((err) => alert("Erro no login")) 
+  } 
+  
   return(
     <ScreenConteiner>
       <InputConteiner>
@@ -25,7 +46,7 @@ const LoginPage = () => {
             fullWidth
             margin="normal"
             required
-            type={"username"}
+            type={"text"}
           />
           </form> 
         <form onSubmit={onSubmitForm}>
@@ -56,7 +77,7 @@ const LoginPage = () => {
         </form>   
 
         <Button
-        type="submit"
+        type={"submit"}
         fullWidth
         variant="contained"
         color={"primary"}
@@ -67,6 +88,7 @@ const LoginPage = () => {
       </InputConteiner>
       <SignUpButtonContainer>
           <Button
+          onClick={() => goToRegister(Navigate)}
           type="submit"
           fullWidth
           color={"primary"}

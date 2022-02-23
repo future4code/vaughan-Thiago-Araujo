@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const useForm = (initialState) => {
   
-  const [form, setForm] = useState (initialState)
+  const [form, setForm] = useState(initialState)
 
   const handleInputChange = (event) => {
     const {value, name} = event.target
