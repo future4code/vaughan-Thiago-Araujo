@@ -1,0 +1,1 @@
+// Exercício 5 - O que foi mudado target es5,"strict": true,"esModuleInterop": true e "forceConsistentCasingInFileNames": true 
