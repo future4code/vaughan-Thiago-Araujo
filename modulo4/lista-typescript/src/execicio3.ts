@@ -6,18 +6,32 @@ enum GENERO {
   TERROR = "terror"
 }
 
-type Catalogo = {
+type filme = {
+  nome: string;
+  anoLancamento: number;
+  genero: GENERO;
+  pontuacao?: number;
+};
+
+const execicio3 = (
   nome: string,
-  anoLancamento: number,
-  genero: string,
-  pontuacao: number
-}
-
-let filme: Catalogo = {
-  nome: "SPIDER-MAN: NO WAY HOME",
-  anoLancamento: 2021,
-  genero: "Fantasy/Action",
-  pontuacao: 93
-}
-
-console.log(`nome: ${filme.nome}, Ano Lançamento: ${filme.anoLancamento}, gênero: ${GENERO.ACAO}, pontuação: ${filme.pontuacao}`)
+  ano: number,
+  genero: GENERO,
+  nota?: number
+): filme => {
+  if (nota) {
+    return {
+      nome: nome,
+      anoLancamento: ano,
+      genero: genero,
+      pontuacao: nota
+    };
+  } else {
+    return {
+      nome: nome,
+      anoLancamento: ano,
+      genero: genero
+    };
+  }
+};
+console.log(execicio3("Spider-Man: No Way Home", 2021, GENERO.ACAO, 94));
