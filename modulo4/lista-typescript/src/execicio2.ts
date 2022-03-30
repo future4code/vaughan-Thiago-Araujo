@@ -1,9 +1,4 @@
-type Exercicio2 = {
-  var: string
-}
-
-let qualVar: Exercicio2 = {
-  var: "const"
-}
-
-console.log(qualVar)
+const execicio2 = (variavel: any): void => {
+  console.log(typeof variavel);
+};
+execicio2(11);
