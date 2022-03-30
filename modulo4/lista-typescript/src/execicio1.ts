@@ -1,15 +1,6 @@
-type Exercicio1 = {
-  nome: string,
-  dia: string,
-  mes: string,
-  ano: string
-}
-
-let pessoa1: Exercicio1 = {
-  nome: "Amora",
-  dia: "14",
-  mes: "05",
-  ano: "2021"
-}
-
-console.log(`Olá me chamo ${pessoa1.nome}, nasci no dia ${pessoa1.dia} do mês de ${pessoa1.mes} do ano de ${pessoa1.ano}`)
+const execicio1 = (nome: string, dataNascimento: string): string => {
+  const [dia, mes, ano] = dataNascimento.split("/");
+  const frase: string = `Olá me chamo ${nome}, nasci no dia ${dia} do mês de ${mes} do ano de ${ano}`;
+  return frase;
+};
+console.log(execicio1("Thiago", "23/09/2002"));
