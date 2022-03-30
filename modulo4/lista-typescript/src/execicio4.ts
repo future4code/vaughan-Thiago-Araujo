@@ -1,59 +1,30 @@
-type Empresa = {
-  nome: string,
-  salario: number
-  setor: string,
-  presencial: boolean
+enum SETORES {
+  MARKETING = "marketing",
+  VENDAS = "vendas",
+  FINANCEIRO = "financeiro"
 }
 
-let fun1: Empresa = {
-  nome: 'Marcos',
-  salario: 2500,
-  setor: 'marketing',
-  presencial: true
-}
+type colaboradores = {
+  nome: string;
+  salário: number;
+  setor: SETORES;
+  presencial: boolean;
+};
 
+const listaColaboradores: colaboradores[] = [
+  { nome: "Marcos", salário: 2500, setor: SETORES.MARKETING, presencial: true },
+  { nome: "Maria", salário: 1500, setor: SETORES.VENDAS, presencial: false },
+  { nome: "Saulo", salário: 2200, setor: SETORES.FINANCEIRO, presencial: true },
+  { nome: "João", salário: 2800, setor: SETORES.MARKETING, presencial: false },
+  { nome: "Josué", salário: 5500, setor: SETORES.FINANCEIRO, presencial: true },
+  { nome: "Natalia", salário: 4700, setor: SETORES.VENDAS, presencial: true },
+  { nome: "Paola", salário: 3500, setor: SETORES.MARKETING, presencial: true }
+];
 
-let fun2: Empresa = {
-  nome: 'Maria',
-  salario: 1500,
-  setor: 'vendas',
-  presencial: false
-}
-
-let fun3: Empresa = {
-  nome: 'Salete',
-  salario: 2200,
-  setor: 'financeiro',
-  presencial: true
-}
-
-let fun4: Empresa = {
-  nome: 'João',
-  salario: 2800,
-  setor: 'marketing',
-  presencial: false
-}
-
-let fun5: Empresa = {
-  nome: 'Josué',
-  salario: 5500,
-  setor: 'financeiro',
-  presencial: true
-}
-
-let fun6: Empresa = {
-  nome: 'Natalia',
-  salario: 4700,
-  setor: 'vendas',
-  presencial: true
-}
-
-
-let fun7: Empresa = {
-  nome: 'Paola',
-  salario: 3500,
-  setor: 'marketing',
-  presencial: true
-}
-
-console.log(fun1, fun2, fun3, fun4, fun5, fun6, fun7)
+const execicio4 = (lista: colaboradores[]): colaboradores[] => {
+  const listaFiltrada: colaboradores[] = lista.filter((colaborador) => {
+    return colaborador.setor === SETORES.MARKETING && colaborador.presencial;
+  });
+  return listaFiltrada;
+};
+console.log(execicio4(listaColaboradores));
