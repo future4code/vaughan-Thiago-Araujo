@@ -1,4 +1,5 @@
-const funcao2 = (variavel: any): void => {
+const execicio2 = (variavel: any): void => {
   console.log(typeof variavel);
 };
-funcao2(9);
+execicio2(11);
+
