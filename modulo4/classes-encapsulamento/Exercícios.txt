@@ -1,0 +1,6 @@
+Exercício 1
+
+a) o construtor determina que ações devem ser executadas quando da criação de um objeto, só escrever o nome do construtor.
+b) Nenhuma vez
+c) Depende se quiser alterar ou apenas ler, de qualquer forma é só ir nas classes e escrever uma função public "NovaFunção"("NovoValor": any){ this."AntigoValor" = "NovoValor"}
+
