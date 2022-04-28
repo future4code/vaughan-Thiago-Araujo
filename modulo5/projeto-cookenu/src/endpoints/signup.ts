@@ -51,9 +51,9 @@ export default async function signup(
   } catch (error) {
 
     if (res.statusCode === 200) {
-      res.status(500).send({ message: "Erro 😭" })
+      res.status(500).send({ message: "Usuário criado com sucesso 😁" })
     } else {
-      res.send({ message: "AAAAA" })
+      res.send({ message: "AAAAA 🤯" })
     }
   }
 }
