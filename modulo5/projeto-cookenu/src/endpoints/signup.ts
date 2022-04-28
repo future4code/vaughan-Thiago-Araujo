@@ -1,59 +1,46 @@
+import { BaseDatabase } from "../data/BaseDatabase";
+import { UserDatabase } from "../data/UserDatabase";
 import { Request, Response } from "express";
-import connection from "../connection";
-import { Authenticator } from "../services/Authenticator";
-import { HashManager } from "../services/HashManager";
 import { IdGenerator } from "../services/IdGenerator";
-import { authenticationData, user } from "../types";
+import { HashManager } from "../services/HashManager";
+import { TokenExpiredError } from "jsonwebtoken";
+import { Authenticator } from "../services/Authenticator";
 
-export default async function signup(
-  req: Request,
-  res: Response
-): Promise<void> {
-
+export const signup = async (req: Request, res: Response) => {
   try {
-    const { name, email, password, } = req.body
+    const email = req.body.email;
+    const password = req.body.password;
+    const name = req.body.name;
 
-    if (!name || !email || !password) {
-      res.statusCode = 422
-      throw new Error("Preencha os campos 'name', 'password', e 'email'")
+    if (!email || !password || !name) {
+      throw new Error("Insert all required information");
     }
 
-    const [user] = await connection('cookenu_users')
-      .where({ email })
-
-    if (user) {
-      res.statusCode = 409
-      throw new Error('Email já cadastrado')
+    if (email.indexOf("@") === -1) {
+      throw new Error("Invalid email");
     }
 
-    let idGenerator = new IdGenerator()
-    const id: string = idGenerator.generateId()
-    let hashManager: HashManager = new HashManager()
-    const cypherPassword = hashManager.createHash(password)
+    const idGenerator = new IdGenerator();
+    const id = idGenerator.generateId();
 
-    const newUser: user = {
-      id,
-      name,
-      email,
-      password: cypherPassword,
-    }
+    const hashManager = new HashManager();
+    const encryptedPassword = await hashManager.hash(password);
 
-    await connection('cookenu_users')
-      .insert(newUser)
+    const userDatabase = new UserDatabase();
+    await userDatabase.createUser(id, name, email, encryptedPassword);
 
-    const authenticator: Authenticator = new Authenticator()
-    const payload: authenticationData = {
-      id: newUser.id,
-    }
-    const token = authenticator.GenerateToken(payload)
-    res.status(201).send({ token })
+    const authenticator = new Authenticator();
+    const token = authenticator.generateToken({ id });
 
+    res.status(200).send({
+      message: `Usuário ${name} criado com sucesso!`,
+      acess_token: token,
+    });
   } catch (error) {
-
-    if (res.statusCode === 200) {
-      res.status(500).send({ message: "Usuário criado com sucesso 😁" })
-    } else {
-      res.send({ message: "AAAAA 🤯" })
-    }
+    res.status(400).send({
+      message: error.sqlMessage || error.message,
+    });
+  } finally {
+    await BaseDatabase.destroyConnection();
   }
-}
+};
