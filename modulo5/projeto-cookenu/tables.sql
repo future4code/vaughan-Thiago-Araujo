@@ -1,6 +1,0 @@
-CREATE TABLE IF NOT EXISTS cookenu_users (
-    id VARCHAR(64) PRIMARY KEY,
-    name VARCHAR(64) NOT NULL,
-    nickname VARCHAR(64) NOT NULL,
-    email VARCHAR(64) NOT NULL
-);
