@@ -4,3 +4,4 @@ const execicio1 = (nome: string, dataNascimento: string): string => {
   return frase;
 };
 console.log(execicio1("Thiago", "23/09/2002"));
+
